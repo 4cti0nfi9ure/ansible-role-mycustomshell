@@ -1,4 +1,4 @@
-xy_info:
+galaxy_info:
         role_name: ansible-role-mycustomshell
         author: Markus Wurzenberger
         description: Ansible role for installing and configuring zsh, Oh My Zsh, and some useful plugins.
