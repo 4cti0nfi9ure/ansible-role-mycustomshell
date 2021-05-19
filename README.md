@@ -6,7 +6,7 @@ Ansible role for installing and configuring:
 * zsh-syntax-highlighting
 
 # Requirements
-Tested on Ubuntu 20.04.
+Tested on Ubuntu 18.04 and 20.04.
 
 # Configuration
 ```
