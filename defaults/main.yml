@@ -1,0 +1,6 @@
+zsh_theme: robbyrussell
+user_name: ubuntu
+zsh_plugins:
+        - git
+        - zsh-autosuggestions
+        - zsh-syntax-highlighting 
