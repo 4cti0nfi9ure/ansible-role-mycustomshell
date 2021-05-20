@@ -4,6 +4,7 @@ Ansible role for installing and configuring:
 * oh-my-zsh
 * zsh-autosuggestions
 * zsh-syntax-highlighting
+* fzf
 
 # Requirements
 Tested on Ubuntu 18.04 and 20.04.
