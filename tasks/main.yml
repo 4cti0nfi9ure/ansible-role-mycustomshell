@@ -9,15 +9,39 @@
           repo: 'https://github.com/ohmyzsh/ohmyzsh.git'
           dest: "/home/{{ user_name }}/.oh-my-zsh"
 
+- name: Recoursively change ownership of /home/{{ user_name }}/.oh-my-zsh
+  ansible.builtin.file:
+          path: /home/{{ user_name }}/.oh-my-zsh
+          state: directory
+          recurse: yes
+          owner: {{ user_name }}
+          group: {{ user_group }}
+
 - name: Clone zsh-autosuggestions repo
   ansible.builtin.git:
           repo: 'https://github.com/zsh-users/zsh-autosuggestions'
           dest: "/home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 
+- name: Recoursively change ownership of /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  ansible.builtin.file:
+          path: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+          state: directory
+          recurse: yes
+          owner: {{ user_name }}
+          group: {{ user_group }}
+
 - name: Clone zsh-syntax-highlighting repo
   ansible.builtin.git:
           repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
           dest: "/home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+
+- name: Recoursively change ownership of /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  ansible.builtin.file:
+          path: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+          state: directory
+          recurse: yes
+          owner: {{ user_name }}
+          group: {{ user_group }}
 
 - name: Install fzf
   become: yes
@@ -28,6 +52,8 @@
   ansible.builtin.template:
           src: zshrc.j2
           dest: "/home/{{ user_name }}/.zshrc"
+          owner: {{ user_name }}
+          group: {{ user_group }}
 
 - name: Change default shell to oh-my-zh
   become: yes
