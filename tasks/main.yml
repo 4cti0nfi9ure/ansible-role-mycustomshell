@@ -14,8 +14,8 @@
           path: /home/{{ user_name }}/.oh-my-zsh
           state: directory
           recurse: yes
-          owner: {{ user_name }}
-          group: {{ user_group }}
+          owner: "{{ user_name }}"
+          group: "{{ user_group }}"
 
 - name: Clone zsh-autosuggestions repo
   ansible.builtin.git:
@@ -27,8 +27,8 @@
           path: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
           state: directory
           recurse: yes
-          owner: {{ user_name }}
-          group: {{ user_group }}
+          owner: "{{ user_name }}"
+          group: "{{ user_group }}"
 
 - name: Clone zsh-syntax-highlighting repo
   ansible.builtin.git:
@@ -40,8 +40,8 @@
           path: /home/{{ user_name }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
           state: directory
           recurse: yes
-          owner: {{ user_name }}
-          group: {{ user_group }}
+          owner: "{{ user_name }}"
+          group: "{{ user_group }}"
 
 - name: Install fzf
   become: yes
@@ -52,8 +52,8 @@
   ansible.builtin.template:
           src: zshrc.j2
           dest: "/home/{{ user_name }}/.zshrc"
-          owner: {{ user_name }}
-          group: {{ user_group }}
+          owner: "{{ user_name }}"
+          group: "{{ user_group }}"
 
 - name: Change default shell to oh-my-zh
   become: yes
