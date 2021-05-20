@@ -8,7 +8,7 @@ Ansible role for installing and configuring:
 
 # Requirements
 Tested on Ubuntu 18.04 and 20.04.
-Ansible 2.9
+Ansible 2.9, git
 
 # Configuration
 ```
