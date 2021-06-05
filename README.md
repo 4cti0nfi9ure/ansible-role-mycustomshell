@@ -24,5 +24,6 @@ user_name: ubuntu
 zsh_plugins:
         - git
         - zsh-autosuggestions
-        - zsh-syntax-highlighting 
+        - zsh-syntax-highlighting
+        - fzf
 ```
